@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pofile Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="profile-card">
+            <img src="./images/IMG-20240928-WA0003.jpg" alt="Profile Picture" class="profile-picture" data-testid="profilePicture">
+            
+            <h2 data-testid="fullName">Toheeb Ayinde Hassan</h2>
+            
+            <p class="job-title" data-testid="jobTitle">Frontend Developer | Bioinformatics Enthusiast</p>
+            
+            <p class="bio" data-testid="shortBio">
+                A passionate frontend developer skilled in React.js and Next.js, with a background in bioinformatics and clinical research. 
+                Dedicated to building web solutions that make data accessible and understandable for a wide audience.
+            </p>
+            
+            <p class="location" data-testid="currentLocation">Lagos, Nigeria</p>
+            
+            <p class="email" data-testid="emailAddress">
+                Email: <a href="mailto:hassantoheebayinde@gmail.com">Hassantoheebayinde</a>
+            </p>
+            
+            <div class="social-links" data-testid="socialLinks">
+                <a href="https://www.linkedin.com/in/toheeb" target="_blank">LinkedIn</a>
+                <a href="https://github.com/hassan-ayinde" target="_blank">GitHub</a>
+                <a href="https://x.com/HassanToheebAy1" target="_blank">Twitter</a>
+            </div>
+    
+            <p class="utc-time" data-testid="currentTimeUTC">UTC Time: <span id="utc-time"></span></p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
