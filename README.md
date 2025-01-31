@@ -12,3 +12,5 @@ TailwindCSS 🎨
 TypeScript 🏹 (if applicable)
 API Integrations 🌐
 Feel free to explore, fork, and contribute! 🎉
+
+Task1: A simple profile card task that also contains the time in utc and its update after every page refresh 
