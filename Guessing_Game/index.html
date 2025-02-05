@@ -13,31 +13,33 @@
                 <h1>Game on! Test Your Color Matching Skills! 🎨</h1>
                 <p>Can you guess the correct color? Look at the color box and choose the matching color from the options below. </p>
                 <p>If you guess right, you earn a point!. If not, try again!. You have 2 guesses for a round</p>
-                <p>Click ‘New Game’ to play a new round.</p>
+                <p>Click <b>‘New Game’</b> to play a new round.</p>
                 <button type="button" id="startGameButton">Start Game</button>
             </div>
             <div class="game hidden">
-                <div>
-                    <p data-testid="gameStatus"></p>
-                </div>
-                <div class="color-box" data-testid='colorBox'></div>
-                <div>
-                    <p>Score: <span data-testid="score">0</span></p>
-                    <p>Guesses: <span id="guessNumber">3</span> remaining</p>
-                </div>
-                <!-- <div class="color-options">
-                    <button type="button" title="color" data-testid="colorOption"></button>
-                    <button type="button" title="color" data-testid="colorOption"></button>
-                    <button type="button" title="hello" data-testid="colorOption"></button>
-                    <button type="button" title="color" data-testid="colorOption"></button>
-                    <button type="button" title="color" data-testid="colorOption"></button>
-                    <button type="button" title="color" data-testid="colorOption"></button> --
-                </div> -->
-                <div id="colorOptions">
-                    <!-- Color buttons will be added dynamically using JavaScript -->
-                </div>
-                <div class="score">
-                    <button type="button" data-testid="newGameButton">New Game</button>
+                <div class="game-container">
+                    <div class="game-info">
+                        <p data-testid="gameStatus"></p>
+                    </div>
+                    <div class="color-box" data-testid='colorBox'></div>
+                    <div class="game-stats">
+                        <p>Score: <span data-testid="score">0</span></p>
+                        <p>Guesses: <span id="guessNumber">3</span> remaining</p>
+                    </div>
+                    <!-- <div class="color-options">
+                        <button type="button" title="color" data-testid="colorOption"></button>
+                        <button type="button" title="color" data-testid="colorOption"></button>
+                        <button type="button" title="hello" data-testid="colorOption"></button>
+                        <button type="button" title="color" data-testid="colorOption"></button>
+                        <button type="button" title="color" data-testid="colorOption"></button>
+                        <button type="button" title="color" data-testid="colorOption"></button> --
+                    </div> -->
+                    <div id="colorOptions">
+                        <!-- Color buttons will be added dynamically using JavaScript -->
+                    </div>
+                    <div class="score">
+                        <button type="button" data-testid="newGameButton">New Game</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,8 +59,8 @@
         
     </main>
 
-    <!-- <script src="script.js"></script> -->
-    <script src="script2.js"></script>
+    <script src="script.js"></script>
+    <!-- <script src="script2.js"></script> -->
 </body>
 </html>
 
