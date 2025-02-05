@@ -6,15 +6,14 @@ const scoreDisplay = document.querySelector("[data-testid='score']");
 const newGameButton = document.querySelector("[data-testid='newGameButton']");
 const startGameButton = document.getElementById("startGameButton");
 const gameInstructions = document.querySelector("[data-testid='gameInstructions']");
-const game = document.querySelector(".game");
 const guessNumber = document.querySelector("#guessNumber");
+const game = document.querySelector(".game");
+const modal = document.getElementById("modal");
+const finalScoreDisplay = document.querySelector("[data-testid='finalScore']");
+const playAgainButton = document.getElementById("playAgainButton");
+const quitGameButton = document.getElementById("quitGameButton");
+const closeButton = document.querySelector(".close-btn");
 
-
-const targetStyles = window.getComputedStyle(colorBox);
-let optionStyles;
-
-
-const targetColor = colorBox.style.backgroundColor;
 let score = 0;
 let guess = 3;
 
@@ -29,8 +28,7 @@ const colors = {
     black: ["#000000", "#1C1C1C", "#363636", "#4F4F4F", "#696969", "#808080"],
     blue: ["#ADD8E6", "#87CEEB", "#4682B4", "#1E90FF", "#0000FF", "#00008B"],
     violet: ["#EE82EE", "#DA70D6", "#D87093", "#C71585", "#9400D3", "#800080"]
-}
-
+};
 
 // Function to get a random color category
 function getRandomColorCategory() {
@@ -67,6 +65,9 @@ function startGame() {
         
         colorOptionsContainer.appendChild(button);
     });
+
+    gameStatus.textContent = "Pick a color!";
+    gameStatus.style.color = "black";
 }
 
 // Function to check user's guess
@@ -90,3 +91,56 @@ function checkGuess(selectedBtnColor, targetBoxColor) {
         guessNumber.textContent = guess;
     }
 }
+
+
+// Function to show modal
+function showModal(score) {
+    finalScoreDisplay.textContent = score; // Update score in modal
+    modal.style.display = "block";
+}
+
+// Function to hide modal
+function closeModal() {
+    modal.style.display = "none";
+}
+
+// Show modal when the game is over
+function gameOver() {
+    // alert("Game Over!"); // Optional alert
+    showModal(score); // Show the modal with the final score
+}
+
+// Restart the game when "Play Again" is clicked
+playAgainButton.addEventListener("click", () => {
+    guess = 3; // Reset guess count
+    score = 0; // Reset score
+    scoreDisplay.textContent = score;
+    guessNumber.textContent = guess;
+    closeModal(); // Hide modal
+    startGame(); // Start new game round
+});
+
+// Quit the game when "Quit Game" is clicked
+quitGameButton.addEventListener("click", () => {
+    closeModal();
+    game.classList.add("hidden");
+    gameInstructions.classList.remove("hidden");
+
+    guess = 3;
+    score = 0;
+    scoreDisplay.textContent = score;
+    guessNumber.textContent = guess;
+});
+
+// Close modal when ❌ button is clicked
+closeButton.addEventListener("click", closeModal);
+
+// Start game when the start button is clicked
+startGameButton.addEventListener("click", () => {
+    game.classList.remove("hidden");
+    gameInstructions.classList.add("hidden");
+    startGame();
+});
+
+// Restart game when the "New Game" button is clicked
+newGameButton.addEventListener("click", startGame);
