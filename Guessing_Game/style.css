@@ -38,7 +38,7 @@ main{
     height: 50px;
     width: 50px;
 }
-.color-options button{
+#colorOptions button{
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -61,4 +61,46 @@ main{
 }
 .color-options button:nth-child(6){
     background-color: #4169E1;
+}
+
+
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Ensure it’s on top */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.modal button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #4087c2;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.modal button:hover {
+    background-color: #3070a1;
+}
+
+.modal .close-btn {
+    background-color: red;
+    margin-left: 10px;
 }

@@ -16,7 +16,7 @@
                 <p>Click ‘New Game’ to play a new round.</p>
                 <button type="button" id="startGameButton">Start Game</button>
             </div>
-            <div class="game">
+            <div class="game hidden">
                 <div>
                     <p data-testid="gameStatus"></p>
                 </div>
@@ -25,22 +25,40 @@
                     <p>Score: <span data-testid="score">0</span></p>
                     <p>Guesses: <span id="guessNumber">3</span> remaining</p>
                 </div>
-                <div class="color-options">
-                    <button type="button" title="color" dtat-testid="colorOption"></button>
-                    <button type="button" title="color" dtat-testid="colorOption"></button>
-                    <button type="button" title="hello" dtat-testid="colorOption"></button>
-                    <button type="button" title="color" dtat-testid="colorOption"></button>
-                    <button type="button" title="color" dtat-testid="colorOption"></button>
-                    <button type="button" title="color" dtat-testid="colorOption"></button>
+                <!-- <div class="color-options">
+                    <button type="button" title="color" data-testid="colorOption"></button>
+                    <button type="button" title="color" data-testid="colorOption"></button>
+                    <button type="button" title="hello" data-testid="colorOption"></button>
+                    <button type="button" title="color" data-testid="colorOption"></button>
+                    <button type="button" title="color" data-testid="colorOption"></button>
+                    <button type="button" title="color" data-testid="colorOption"></button> --
+                </div> -->
+                <div id="colorOptions">
+                    <!-- Color buttons will be added dynamically using JavaScript -->
                 </div>
                 <div class="score">
                     <button type="button" data-testid="newGameButton">New Game</button>
                 </div>
             </div>
         </div>
+        <div class="modal hidden" id="modal">
+            <div class="modal-content">
+                <div>
+                    <h2>Game Over!</h2>
+                    <button type="button" class="close-btn">❌</button>
+                </div>
+                <p>Your score is <span data-testid="finalScore">0</span></p>
+                <div>
+                    <button type="button" id="playAgainButton" data-testid="playAgainButton">Play Again</button>
+                    <button type="button" id="quitGameButton">Quit Game</button>
+                </div>
+            </div>
+        </div>
+        
     </main>
 
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="script2.js"></script>
 </body>
 </html>
 
