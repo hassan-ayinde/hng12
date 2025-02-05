@@ -96,12 +96,13 @@ main{
     background-color: #4087c2;
     height: 90px;
     width: 100px;
+    border: 1px solid #333;
 }
 #colorOptions{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* justify-content: space-between;
-    padding: 10px; */
+    /* justify-content: space-between; */
+    /* padding: 10px; */
     width: 100%;
     gap: 10px;
 }
@@ -111,6 +112,7 @@ main{
     cursor: pointer;
     border: none;
     margin: 0;
+    border: 1px solid #333;
 }
 .color-options button:nth-child(1){
     background-color: #1E90FF;
@@ -179,5 +181,8 @@ main{
     .color-box{
         width: 150px;
         height: 100px;
+    }
+    #colorOptions{
+        padding: 10px;
     }
 }

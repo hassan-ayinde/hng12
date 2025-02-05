@@ -36,6 +36,8 @@ function getRandomColorCategory() {
     return colorKeys[Math.floor(Math.random() * colorKeys.length)];
 }
 
+function scoreIncrement() {}
+
 // Function to start the game
 function startGame() {
     // Reset the guess count
@@ -143,4 +145,10 @@ startGameButton.addEventListener("click", () => {
 });
 
 // Restart game when the "New Game" button is clicked
-newGameButton.addEventListener("click", startGame);
+newGameButton.addEventListener("click", () => {
+    guess = 3;
+    score = 0;
+    scoreDisplay.textContent = score;
+    guessNumber.textContent = guess;
+    startGame();
+});
