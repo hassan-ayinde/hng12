@@ -75,24 +75,41 @@ function startGame() {
 // Function to check user's guess
 function checkGuess(selectedBtnColor, targetBoxColor) {
     if (selectedBtnColor === targetBoxColor && guess > 0) {
-        gameStatus.textContent = "✅ Correct!";
+        gameStatus.textContent = "✅ Correct! 🎈";
         gameStatus.style.color = "green";
+
+        // Add the celebration animation
+        gameStatus.classList.add("celebrate");
+
+        // Remove the animation after it plays to allow re-triggering
+        setTimeout(() => {
+            gameStatus.classList.remove("celebrate");
+            startGame(); // Start next round after celebration
+        }, 1000); // Show message & animation for 1 second
+
         score++;
         scoreDisplay.textContent = score;
-        startGame();
     } else {
         gameStatus.textContent = "❌ Wrong! Try again.";
         gameStatus.style.color = "red";
-        guess--;
         
-        if(guess <= 0){
+        // Remove and re-add fadeIn class to restart animation
+        gameStatus.classList.remove("fadeIn");
+        void gameStatus.offsetWidth; // Forces reflow
+        gameStatus.classList.add("fadeIn");
+
+        guess--;
+
+        if (guess <= 0) {
             guess = 0;
             gameOver();
         }
-        
+
         guessNumber.textContent = guess;
     }
 }
+
+
 
 
 // Function to show modal
@@ -108,7 +125,6 @@ function closeModal() {
 
 // Show modal when the game is over
 function gameOver() {
-    // alert("Game Over!"); // Optional alert
     showModal(score); // Show the modal with the final score
 }
 
