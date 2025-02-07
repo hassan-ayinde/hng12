@@ -15,4 +15,6 @@ API Integrations 🌐
 
 Feel free to explore, fork, and contribute! 🎉
 
-Stage 0 Task: A simple profile card task that also contains the time in utc and its update after every page refresh 
+Stage 0 Task: A simple profile card task that also contains the time in utc and its update after every page refresh.
+
+Stage 1 Task: A Color Guessing Game 
